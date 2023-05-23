@@ -4,11 +4,13 @@
 # 是否为空
 if [ -z ${1} ]; then 
     echo "err!!! position parameter is empty!!!"
+    exit 1
 fi
 
 # 长度是否小于6
 if [ $(expr length "$1") -lt 6 ]; then
     echo "This doesn't look like a image name, because it to short!"   
+    exit 1
 fi
 
 
