@@ -15,20 +15,18 @@ fi
 push_tag=jiangleiww/`echo ${1} | awk -F / '{print $NF}'`
 
 function start {
-    # echo "start.."
-
-    # echo ${1}
-
     docker pull ${1}
-
 
     docker tag ${1} ${push_tag}
     
     docker login
 
     docker push ${push_tag}
+
+    echo ${push_tag}
 }
 
 # docker pull $1
 
 start ${1}
+# TODO: 先用着....
